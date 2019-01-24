@@ -129,7 +129,6 @@ public class SelectedImageActivity extends AppCompatActivity implements View.OnC
                 break;
             case R.id.menu_share_image:
                 sharingImage();
-//                Toast.makeText(this, "Try sharing", Toast.LENGTH_LONG).show();
                 break;
             default:
                 finish();
@@ -146,18 +145,20 @@ public class SelectedImageActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        WallpaperManager myWallpaperManager = WallpaperManager.getInstance(getApplicationContext());
+        Toast.makeText(this, "Обои устанавливаются", Toast.LENGTH_LONG).show();
 
+        //TODO fix block ui!
+        WallpaperManager myWallpaperManager = WallpaperManager.getInstance(getApplicationContext());
         bigImageView.buildDrawingCache();
+
         try {
-            Toast.makeText(this, "Обои устанавливаются", Toast.LENGTH_LONG).show();
             myWallpaperManager.setBitmap(bigImageView.getDrawingCache());
             Toast.makeText(this, "Обои успешно установлены", Toast.LENGTH_LONG).show();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             Toast.makeText(this, "Ошибка", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
     }
+
 }

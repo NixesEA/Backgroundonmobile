@@ -15,7 +15,6 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import ru.pushapp.backgroungonmobile.fragments.AllWallpapersFragment;
-import ru.pushapp.backgroungonmobile.fragments.TestFragment;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
@@ -41,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
+        navigationView.setItemBackgroundResource(R.drawable.activated_background);
         navigationView.getMenu().getItem(0).setChecked(true);
         openAllWallpaper();
     }
@@ -58,18 +58,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         transaction.commit();
     }
 
-    public void openTestFragment(){
-        Fragment currentFragment = getSupportFragmentManager().findFragmentByTag("TestFragment");
-        if (currentFragment != null){
-            return;
-        }
-
-        Fragment fragment = new TestFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_container, fragment,"TestFragment");
-        transaction.show(fragment);
-        transaction.commit();
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -86,7 +74,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
                 openAllWallpaper();
                 break;
             case R.id.favorites_item_menu:
-                openTestFragment();
                 break;
             default:
                 Toast.makeText(this, menuItem.getTitle(), Toast.LENGTH_LONG).show();

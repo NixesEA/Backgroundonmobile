@@ -7,9 +7,14 @@
     <color name="textColor">#fff</color>
     <color name="subTextColor">#a3000000</color>
 
+
+    <color name="testColor">#a34656bc</color>
+
+
     <!--tab text-->
     <color name="tabTextColor">#b0ffffff</color>
     <color name="tabSelectedTextColor">@color/textColor</color>
+    <color name="lightColorPrimary">#adf44336</color>
 
     <!--selected image activity-->
     <color name="selected_image_background">#f2f2f2</color>
