@@ -31,7 +31,8 @@
             <ImageView
                 android:id="@+id/big_imageview"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="wrap_content"
+                android:minHeight="400dp"
                 android:scaleType="centerCrop"
                 android:background="@color/color_place_holder"
                 app:layout_constraintTop_toBottomOf="@id/toolbar" />
@@ -52,15 +53,18 @@
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:layout_alignParentBottom="true"
             android:layout_below="@id/coordinator_layout"
-            android:background="@color/selected_image_background"
-            android:padding="16dp">
+            android:background="@color/selected_image_background">
 
             <ImageView
                 android:id="@+id/select_activity_favor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:paddingStart="16dp"
                 android:src="@drawable/ic_favorite_red"/>
 
             <TextView
@@ -70,9 +74,8 @@
                 android:textColor="@color/subTextColor"
                 app:layout_constraintStart_toEndOf="@id/select_activity_favor"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_toEndOf="@id/select_activity_favor"
-                android:layout_toRightOf="@id/select_activity_favor"/>
+                android:paddingTop="16dp"
+                android:layout_toEndOf="@id/select_activity_favor"/>
 
             <ImageView
                 android:id="@+id/select_activity_download"
@@ -80,9 +83,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toEndOf="@id/count_likes"
                 android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
+                android:paddingTop="16dp"
                 android:layout_toEndOf="@id/count_likes"
-                android:layout_toRightOf="@id/count_likes"
                 android:src="@drawable/ic_file_download" />
 
             <TextView
@@ -92,19 +94,21 @@
                 android:textColor="@color/subTextColor"
                 app:layout_constraintStart_toEndOf="@id/select_activity_download"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_toEndOf="@id/select_activity_download"
-                android:layout_toRightOf="@id/select_activity_download" />
+                android:paddingTop="16dp"
+                android:layout_toEndOf="@id/select_activity_download" />
 
+
+            <!--похожие изображения-->
             <TextView
                 android:id="@+id/similar_images_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
+                android:paddingStart="16dp"
                 android:textColor="@color/selected_image_text_others_image"
                 app:layout_constraintBottom_toTopOf="@id/similar_images_rv"
                 android:text="Похожие изображения"
-                android:textSize="16dp" />
+                android:textSize="18sp" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/similar_images_rv"
