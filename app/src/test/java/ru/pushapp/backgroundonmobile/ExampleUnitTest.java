@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile;
+package ru.pushapp.backgroundonmobile;
 
 import org.junit.Test;
 

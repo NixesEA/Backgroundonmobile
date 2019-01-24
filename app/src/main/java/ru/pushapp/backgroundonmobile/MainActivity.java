@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile;
+package ru.pushapp.backgroundonmobile;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -14,7 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import ru.pushapp.backgroungonmobile.fragments.AllWallpapersFragment;
+import ru.pushapp.backgroundonmobile.fragments.AllWallpapersFragment;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 

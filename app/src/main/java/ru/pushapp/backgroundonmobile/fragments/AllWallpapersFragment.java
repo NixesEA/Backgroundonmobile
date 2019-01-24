@@ -1,16 +1,15 @@
-package ru.pushapp.backgroungonmobile.fragments;
+package ru.pushapp.backgroundonmobile.fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import ru.pushapp.backgroungonmobile.R;
-import ru.pushapp.backgroungonmobile.adapters.ViewPagerAdapter;
+import ru.pushapp.backgroundonmobile.R;
+import ru.pushapp.backgroundonmobile.adapters.ViewPagerAdapter;
 
 public class AllWallpapersFragment extends Fragment {
 

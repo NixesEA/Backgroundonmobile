@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile.fragments;
+package ru.pushapp.backgroundonmobile.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,9 +10,9 @@ import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-import ru.pushapp.backgroungonmobile.ImageModel;
-import ru.pushapp.backgroungonmobile.R;
-import ru.pushapp.backgroungonmobile.adapters.rvAdapter;
+import ru.pushapp.backgroundonmobile.ImageModel;
+import ru.pushapp.backgroundonmobile.R;
+import ru.pushapp.backgroundonmobile.adapters.rvAdapter;
 
 public class LastImageFragment extends Fragment {
 

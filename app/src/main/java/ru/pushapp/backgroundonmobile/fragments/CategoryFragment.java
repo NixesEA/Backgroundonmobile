@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile.fragments;
+package ru.pushapp.backgroundonmobile.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,15 +7,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import ru.pushapp.backgroungonmobile.ImageModel;
-import ru.pushapp.backgroungonmobile.R;
-import ru.pushapp.backgroungonmobile.adapters.rvAdapter;
+import ru.pushapp.backgroundonmobile.ImageModel;
+import ru.pushapp.backgroundonmobile.R;
+import ru.pushapp.backgroundonmobile.adapters.rvAdapter;
 
 public class CategoryFragment extends Fragment{
 

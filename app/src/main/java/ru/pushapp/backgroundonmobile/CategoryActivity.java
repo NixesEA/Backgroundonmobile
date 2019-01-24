@@ -1,7 +1,5 @@
-package ru.pushapp.backgroungonmobile;
+package ru.pushapp.backgroundonmobile;
 
-import android.support.annotation.NonNull;
-import android.support.design.widget.NavigationView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,7 +13,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import ru.pushapp.backgroungonmobile.adapters.rvAdapter;
+import ru.pushapp.backgroundonmobile.adapters.rvAdapter;
 
 public class CategoryActivity extends AppCompatActivity{
 

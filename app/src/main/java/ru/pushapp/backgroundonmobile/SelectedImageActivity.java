@@ -1,10 +1,8 @@
-package ru.pushapp.backgroungonmobile;
+package ru.pushapp.backgroundonmobile;
 
 import android.app.WallpaperManager;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.provider.MediaStore;
+import android.os.AsyncTask;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +10,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,12 +20,10 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URI;
 import java.util.ArrayList;
 
-import ru.pushapp.backgroungonmobile.adapters.rvAdapter;
+import ru.pushapp.backgroundonmobile.adapters.rvAdapter;
 
 public class SelectedImageActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -145,20 +140,35 @@ public class SelectedImageActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onClick(View view) {
-        Toast.makeText(this, "Обои устанавливаются", Toast.LENGTH_LONG).show();
+        SetWallpaperTask task = new SetWallpaperTask();
+        task.execute();
+    }
 
-        //TODO fix block ui!
+    private void addBitMap() {
         WallpaperManager myWallpaperManager = WallpaperManager.getInstance(getApplicationContext());
         bigImageView.buildDrawingCache();
 
         try {
             myWallpaperManager.setBitmap(bigImageView.getDrawingCache());
-            Toast.makeText(this, "Обои успешно установлены", Toast.LENGTH_LONG).show();
-        } catch (Exception e) {
-            Toast.makeText(this, "Ошибка", Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+        } catch (IOException ignored) {}
+    }
+
+    private class SetWallpaperTask extends AsyncTask<String, Void, Void> {
+
+        protected void onPreExecute() {
+            Toast.makeText(getApplicationContext(), "Обои устанавливаются", Toast.LENGTH_LONG).show();
         }
 
+        @Override
+        protected Void doInBackground(String... arg0) {
+            addBitMap();
+            return null;
+        }
+
+        protected void onPostExecute(Void unused) {
+            Toast.makeText(getApplicationContext(), "Обои уставновлены", Toast.LENGTH_LONG).show();
+        }
     }
+
 
 }

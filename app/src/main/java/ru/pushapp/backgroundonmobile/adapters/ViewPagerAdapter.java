@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile.adapters;
+package ru.pushapp.backgroundonmobile.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group
         android:checkableBehavior="single">
         <item
@@ -9,7 +8,7 @@
             android:title="Все обои" />
         <item
             android:id="@+id/favorites_item_menu"
-            android:icon="@drawable/ic_favorite"
+            android:icon="@drawable/ic_grade"
             android:title="Избранное" />
         <item
             android:id="@+id/local_images_item_menu"

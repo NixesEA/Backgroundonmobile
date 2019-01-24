@@ -1,4 +1,4 @@
-package ru.pushapp.backgroungonmobile;
+package ru.pushapp.backgroundonmobile;
 
 public class ImageModel {
     String url;

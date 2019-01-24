@@ -1,11 +1,10 @@
-package ru.pushapp.backgroungonmobile.adapters;
+package ru.pushapp.backgroundonmobile.adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +16,10 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import ru.pushapp.backgroungonmobile.CategoryActivity;
-import ru.pushapp.backgroungonmobile.ImageModel;
-import ru.pushapp.backgroungonmobile.R;
-import ru.pushapp.backgroungonmobile.SelectedImageActivity;
+import ru.pushapp.backgroundonmobile.CategoryActivity;
+import ru.pushapp.backgroundonmobile.ImageModel;
+import ru.pushapp.backgroundonmobile.R;
+import ru.pushapp.backgroundonmobile.SelectedImageActivity;
 
 public class rvAdapter extends RecyclerView.Adapter<rvAdapter.rvAdapterHolder> {
 
