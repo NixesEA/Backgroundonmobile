@@ -3,9 +3,9 @@ package ru.pushapp.backgroungonmobile;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
-import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,10 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import ru.pushapp.backgroungonmobile.adapters.ViewPagerAdapter;
-import ru.pushapp.backgroungonmobile.fragments.BestImageFragment;
-import ru.pushapp.backgroungonmobile.fragments.CategoryFragment;
-import ru.pushapp.backgroungonmobile.fragments.LastImageFragment;
+import ru.pushapp.backgroungonmobile.fragments.AllWallpapersFragment;
+import ru.pushapp.backgroungonmobile.fragments.TestFragment;
 
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
@@ -26,9 +24,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     DrawerLayout mDrawerLayout;
     NavigationView navigationView;
-
-    ViewPager viewPager;
-    TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,20 +41,34 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu);
 
-        viewPager = findViewById(R.id.view_pager);
-        setupViewPager(viewPager);
-        tabLayout = findViewById(R.id.tab_layout);
-        tabLayout.setupWithViewPager(viewPager);
-
         navigationView.getMenu().getItem(0).setChecked(true);
+        openAllWallpaper();
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new CategoryFragment(), "Категории");
-        adapter.addFragment(new LastImageFragment(), "Последнее");
-        adapter.addFragment(new BestImageFragment(), "Лучшее");
-        viewPager.setAdapter(adapter);
+    public void openAllWallpaper(){
+        Fragment currentFragment = getSupportFragmentManager().findFragmentByTag("AllWallpaper");
+        if (currentFragment != null){
+            return;
+        }
+
+        Fragment fragment = new AllWallpapersFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment,"AllWallpaper");
+        transaction.show(fragment);
+        transaction.commit();
+    }
+
+    public void openTestFragment(){
+        Fragment currentFragment = getSupportFragmentManager().findFragmentByTag("TestFragment");
+        if (currentFragment != null){
+            return;
+        }
+
+        Fragment fragment = new TestFragment();
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.frame_container, fragment,"TestFragment");
+        transaction.show(fragment);
+        transaction.commit();
     }
 
     @Override
@@ -70,15 +79,20 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        Toast.makeText(this,menuItem.getTitle(),Toast.LENGTH_LONG).show();
-
         menuItem.setChecked(true);
-        mDrawerLayout.closeDrawers();
 
-//        switch (menuItem.getItemId()){
-//            case R.id.dashboard_item_menu:
-//
-//        }
+        switch (menuItem.getItemId()) {
+            case R.id.dashboard_item_menu:
+                openAllWallpaper();
+                break;
+            case R.id.favorites_item_menu:
+                openTestFragment();
+                break;
+            default:
+                Toast.makeText(this, menuItem.getTitle(), Toast.LENGTH_LONG).show();
+        }
+
+        mDrawerLayout.closeDrawers();
         return true;
     }
 

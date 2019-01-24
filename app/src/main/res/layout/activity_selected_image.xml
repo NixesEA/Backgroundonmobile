@@ -67,13 +67,12 @@
                 android:id="@+id/count_likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/selected_image_text"
+                android:textColor="@color/subTextColor"
                 app:layout_constraintStart_toEndOf="@id/select_activity_favor"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_toEndOf="@id/select_activity_favor"
-                android:layout_toRightOf="@id/select_activity_favor"
-                android:text="123123132" />
+                android:layout_toRightOf="@id/select_activity_favor"/>
 
             <ImageView
                 android:id="@+id/select_activity_download"
@@ -90,13 +89,12 @@
                 android:id="@+id/count_downloads"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/selected_image_text"
+                android:textColor="@color/subTextColor"
                 app:layout_constraintStart_toEndOf="@id/select_activity_download"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_toEndOf="@id/select_activity_download"
-                android:layout_toRightOf="@id/select_activity_download"
-                android:text="35433" />
+                android:layout_toRightOf="@id/select_activity_download" />
 
             <TextView
                 android:id="@+id/similar_images_tv"

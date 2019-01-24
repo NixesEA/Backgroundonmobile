@@ -71,6 +71,11 @@ public class CategoryFragment extends Fragment{
     }
 
     @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
 
