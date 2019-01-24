@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f44336</color>
+    <color name="colorPrimaryDark">#db3c31</color>
+    <color name="colorAccent">#fff</color>
+
+    <color name="color_place_holder">#4b4a4a</color>
+    <color name="textColor">#fff</color>
+    <color name="subTextColor">#71ffffff</color>
+
+    <color name="image_description_background">#50000000</color>
+
+    <color name="selected_image_background">#f2f2f2</color>
+    <color name="selected_image_text">#333333</color>
+    <color name="selected_image_text_others_image">#000</color>
+    <color name="selected_image_favor_icon">@color/colorPrimary</color>
+</resources>

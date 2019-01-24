@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashboard_item_menu"
+            android:icon="@drawable/ic_dashboard"
+            android:title="Все обои" />
+        <item
+            android:id="@+id/favorites_item_menu"
+            android:icon="@drawable/ic_favorite"
+            android:title="Избранное" />
+        <item
+            android:id="@+id/local_images_item_menu"
+            android:icon="@drawable/ic_folder"
+            android:title="My local images" />
+        <item
+            android:id="@+id/settings_item_menu"
+            android:icon="@drawable/ic_settings"
+            android:title="Настройки" />
+
+    </group>
+</menu>
